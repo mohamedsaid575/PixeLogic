@@ -42,4 +42,5 @@ Results Folder Contains:
 4.	ScreenShots
     
 For Execution use following Command
-    robot -d results tests/PixeLogic.robot
+
+1.	robot -d results tests/PixeLogic.robot
