@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.7.7 on win32)" generated="20200910 02:24:55.777" rpa="false">
+<suite id="s1" name="PixeLogic" source="D:\automation\pixelogic Task\PixeLogic\tests\PixeLogic.robot">
+<test id="s1-t1" name="the signUp API request">
+<kw name="Begin Web Test" library="CommonWeb" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200910 02:24:56.238" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200910 02:24:56.237" endtime="20200910 02:24:58.658"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.6s</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:24:58.659" endtime="20200910 02:24:58.659"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${TIMEOUT}</arg>
+<arg>60s</arg>
+</arguments>
+<msg timestamp="20200910 02:24:58.661" level="INFO">${TIMEOUT} = 60s</msg>
+<status status="PASS" starttime="20200910 02:24:58.660" endtime="20200910 02:24:58.662"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200910 02:24:58.662" endtime="20200910 02:25:00.373"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:24:56.237" endtime="20200910 02:25:00.374"></status>
+</kw>
+<kw name="HTTP Request API" library="PixeLogicApp">
+<kw name="Fetch_APi_request" library="ApiRequest">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>FetchData</arg>
+<arg>${WEBSITE_URL}</arg>
+</arguments>
+<msg timestamp="20200910 02:25:00.376" level="INFO">Creating Session using : alias=FetchData, url=https://www.phptravels.net/register, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20200910 02:25:00.375" endtime="20200910 02:25:00.376"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>FetchData</arg>
+<arg>/register</arg>
+</arguments>
+<assign>
+<var>${Response}</var>
+</assign>
+<msg timestamp="20200910 02:25:01.403" level="INFO">GET Request : url=https://www.phptravels.net/register/register 
+ path_url=/register/register 
+ headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20200910 02:25:01.404" level="INFO">GET Response : url=https://www.phptravels.net/register/register 
+ status=200, reason=OK 
+ body=&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MPDFM5X');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"&gt;
+    &lt;meta name="description" content="php travels is complete booking and reservation system provides complete solution for travel agency"&gt;
+    &lt;meta name="keywords" content="php travels script, php hotels booking script, php reservation system"&gt;
+    &lt;meta name="author" content="PHPTRAVELS"&gt;
+    &lt;title&gt;Register&lt;/title&gt;
+    &lt;!-- facebook --&gt;
+    &lt;meta property="og:title" content="Register"/&gt;
+    &lt;meta property="og:site_name" content="PHPTRAVELS"/&gt;
+    &lt;meta property="og:description" content="php travels is complete booking and reservation system provides complete solution for travel agency"/&gt;
+    &lt;meta property="og:image" content="https://www.phptravels.net/uploads/global/favicon.png"/&gt;
+    &lt;meta property="og:url" content="https://www.phptravels.net/"/&gt;
+    &lt;meta property="og:publisher" content="https://www.phptravels.net/"/&gt;
+    &lt;script&gt;document.getElementById("homeload").remove();&lt;/script&gt;
+    &lt;!-- MetaTags --&gt;
+    &lt;script type="application/ld+json"&gt;
+    {
+    "@context" : "http://schema.org",
+    "@type" : "Corporation",
+    "brand": "PHPTRAVELS",
+    "description": "php travels is complete booking and reservation system provides complete solution for travel agency",
+    "name" : "PHPTRAVELS",
+    "founders": [
+    ""
+    ],
+    "foundingDate": "2019-05",
+    "foundingLocation": "",
+    "knowsAbout": "php travels is complete booking and reservation system provides complete solution for travel agency",
+    "legalName": "PHPTRAVELS",
+    "logo" : "https://www.phptravels.net/uploads/global/favicon.png",
+    "numberOfEmployees": "10",
+    "ownershipFundingInfo": "https://www.phptravels.net/about-Us",
+    "url" : "https://www.phptravels.net/",
+    "sameAs" : [
+    "https://www.facebook.com/travelbusiness",
+"https://twitter.com/phptravels",
+"http:///www.youtube.com/phptravels",
+"https://wa.me/13333334444",
+"https://www.google.com/maps/dir//phptravels+google+maps/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x391905dd3eef0e45:0x25db87dacf506c66?sa=X&amp;ved=2ahUKEwjn76Pn55DkAhWARhUIHVEvAEcQ9RcwGHoECA4QDg",
+"https://www.instagram.com/phptravels_insta/"
+    ],
+    "slogan": "PHPTRAVELS",
+    "tickerSymbol": [
+    "NYSE:SHOP",
+    "TSX:SHOP"
+    ],
+    "awards": "https://phptravels.com/"
+    }
+    &lt;/script&gt;
+
+    &lt;!-- Fav and Touch Icons --&gt;
+    &lt;link rel="shortcut icon" href="https://www.phptravels.net/uploads/global/favicon.png"&gt;
+    &lt;!-- Font face --&gt;
+    &lt;!--&lt;link href="https://fonts.googleapis.com/css?family=Aleo:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet"&gt;--&gt;
+    &lt;!-- CDN URL --&gt;
+    &lt;link href="https://www.phptravels.net/themes/default/assets/css/font-icons.css" rel="stylesheet"&gt;
+    &lt;link href="https://www.phptravels.net/themes/default/assets/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css"&gt;
+    &lt;link href="https://www.phptravels.net/themes/default/assets/css/animate.min.css" rel="stylesheet"&gt;
+    &lt;link href="https://www.phptravels.net/themes/default/assets/css/main.css" rel="stylesheet"&gt;
+    &lt;link href="https://www.phptravels.net/themes/default/assets/css/plugin.css" rel="stylesheet"&gt;
+    &lt;link href="https://www.phptravels.net/themes/default/assets/css/style.css" rel="stylesheet"&gt;
+    &lt;link href="https://www.phptravels.net/themes/default/style.css" rel="stylesheet"&gt;
+    &lt;link href="https://www.phptravels.net/themes/default/assets/css/mobile.css" rel="stylesheet"&gt;
+    &lt;style&gt; @import "https://www.phptravels.net/themes/default/assets/css/childstyle.css"; &lt;/style&gt;
+    &lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;
+    &lt;!--[if lt IE 9]&gt;
+    &lt;script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+    &lt;!-- RTL CSS --&gt;
+    &lt;script src="https://www.phptravels.net/themes/default/assets/js/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
+        &lt;!-- Mobile Redirect --&gt;
+        &lt;!-- Autocomplete files--&gt;
+    &lt;!--&lt;link href="https://www.phptravels.net/themes/default/assets/js/autocomplete/easy-autocomplete.min.css" rel="stylesheet" type="text/css"&gt;
+    &lt;script src="https://www.phptravels.net/themes/default/assets/js/autocomplete/jquery.easy-autocomplete.min.js" type="text/javascript" &gt;&lt;/script&gt;
+    --&gt;&lt;!-- &lt;script src="https://www.phptravels.net/themes/default/assets/js/plugins/datepicker.js"&gt;&lt;/script&gt; --&gt;
+    &lt;!-- Autocomplete files--&gt;
+    &lt;script&gt;var base_url = 'https://www.phptravels.net/';&lt;/script&gt;
+        &lt;/head&gt;
+    &lt;style&gt;body{margin:0px;padding:0px}&lt;/style&gt;  &lt;!-- start Body --&gt;
+  &lt;body class="with-waypoint-sticky" onload="document.body.style.opacity='1'"&gt;
+  &lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MPDFM5X');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;
+
+&lt;style&gt;
+.imagelogo { width: 170px; height: 40px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATYAAABQCAYAAACTZllaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAJ22lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTktMDgtMDhUMjI6MTc6MjMrMDU6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDE5LTA5LTIwVDAzOjEyOjQ3KzA1OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDE5LTA5LTIwVDAzOjEyOjQ3KzA1OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjZkYzg5ZWNjLTE5MjItZTc0OS1hNmIxLWZmMDE3YTgwZTE0ZCIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjY5NzM0MTlkLTY3OGMtOTE0OC1iOWVlLWE1ZjY4MzI0ZmQxNSIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmE1YTdiZTcwLTRlMDUtZTk0My1hZTBjLWFjNDRiM2QzN2I3OSI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6YTVhN2JlNzAtNGUwNS1lOTQzLWFlMGMtYWM0NGIzZDM3Yjc5IiBzdEV2dDp3aGVuPSIyMDE5LTA4LTA4VDIyOjE3OjIzKzA1OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjb252ZXJ0ZWQiIHN0RXZ0OnBhcmFtZXRlcnM9ImZyb20gaW1hZ2UvcG5nIHRvIGFwcGxpY2F0aW9uL3ZuZC5hZG9iZS5waG90b3Nob3AiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjJmODBmMzJkLTdkMWMtYjE0OC04OTRmLTcyMGMwZjBhMTdkYiIgc3RFdnQ6d2hlbj0iMjAxOS0wOS0yMFQwMzoxMTo1OCswNTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6NmMxODExMGItN2Q5Ni02YjQ2LTk0NGItNWZkNTU0OWVhMTExIiBzdEV2dDp3aGVuPSIyMDE5LTA5LTIwVDAzOjEyOjQ3KzA1OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjb252ZXJ0ZWQiIHN0RXZ0OnBhcmFtZXRlcnM9ImZyb20gYXBwbGljYXRpb24vdm5kLmFkb2JlLnBob3Rvc2hvcCB0byBpbWFnZS9wbmciLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImRlcml2ZWQiIHN0RXZ0OnBhcmFtZXRlcnM9ImNvbnZlcnRlZCBmcm9tIGFwcGxpY2F0aW9uL3ZuZC5hZG9iZS5waG90b3Nob3AgdG8gaW1hZ2UvcG5nIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo2ZGM4OWVjYy0xOTIyLWU3NDktYTZiMS1mZjAxN2E4MGUxNGQiIHN0RXZ0OndoZW49IjIwMTktMDktMjBUMDM6MTI6NDcrMDU6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjZjMTgxMTBiLTdkOTYtNmI0Ni05NDRiLTVmZDU1NDllYTExMSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDphNWE3YmU3MC00ZTA1LWU5NDMtYWUwYy1hYzQ0YjNkMzdiNzkiIHN0UmVmOm9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDphNWE3YmU3MC00ZTA1LWU5NDMtYWUwYy1hYzQ0YjNkMzdiNzkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5BxDvzAAAhyElEQVR4nO2deZgU1bn/P9U907My7CAiuADuW9xRiV53XNAkalwvUa+JSojELRo1xhtNvJIYUTQucYsXYzQkStQblaAx3hDcFxRkEwRBdoYZZunp7rp/fKt+XV1VvQ09C/M7n+fpZ6arazl16tR73vOe932PZds2BoPB0JOIdHUBDAaDodQYwWYwGHocRrAZDIYehxFsBoOhx2EEm8Fg6HEYwWYwGHocRrAZDIYehxFsBoOhx2EEm8Fg6HEYwWYwGHocRrAZDIYeR1nYxhMmbv4S6NXJZeloGl65t25oVxfCYDB0PKGCDdi+U0vROfQ0QW0wGLKQTbA10PMEQUNXF8CwTREBooANJNp5fKpE5SjFebobvYAhwA5AP8ACNgOrgY3AeqCxvSfPJtgM0AeYABxOUMi7jb0J2AQsBxYCHwPvA8k8574aGI8eZgr4HfCrIso2CbgINXobeBr4eY79K4ALgLHAQOe6XhJAM1APfAUsQvfxHtAacr6BwMNAf+f6W4MFbAEmojr0sgtwObAfUOW7VhJocY5dAywBPgLeATZsRXkGomdxGKq3JPCJU76leY49GLjDOUclsA44E1jZjnL0B/4ADEP3+CXwI+BTzz5R4N+BUwh/rtmwgLnAlUA85Lq/R0IH1C7GA/OKvoMgfYCzUJ3sCwwi3M7fgoTbIuA14B4k6ArGC... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20200910 02:25:01.405" level="INFO">c:\users\mohammed said\appdata\local\programs\python\python37\lib\site-packages\urllib3\connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.phptravels.net'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,</msg>
+<msg timestamp="20200910 02:25:01.406" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200910 02:25:00.376" endtime="20200910 02:25:01.406"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:25:01.407" endtime="20200910 02:25:01.408"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Response.content}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:25:01.409" endtime="20200910 02:25:01.466"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:00.375" endtime="20200910 02:25:01.466"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:00.374" endtime="20200910 02:25:01.466"></status>
+</kw>
+<kw name="End Web Test" library="CommonWeb" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200910 02:25:01.467" endtime="20200910 02:25:04.135"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:01.467" endtime="20200910 02:25:04.135"></status>
+</kw>
+<doc>HTTP Request</doc>
+<tags>
+<tag>HTTP Request</tag>
+</tags>
+<status status="PASS" starttime="20200910 02:24:56.236" endtime="20200910 02:25:04.136" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Test Case Register with Valid Credentials">
+<kw name="Begin Web Test" library="CommonWeb" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200910 02:25:04.145" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200910 02:25:04.145" endtime="20200910 02:25:06.937"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.6s</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:25:06.937" endtime="20200910 02:25:06.938"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${TIMEOUT}</arg>
+<arg>60s</arg>
+</arguments>
+<msg timestamp="20200910 02:25:06.938" level="INFO">${TIMEOUT} = 60s</msg>
+<status status="PASS" starttime="20200910 02:25:06.938" endtime="20200910 02:25:06.938"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200910 02:25:06.939" endtime="20200910 02:25:08.654"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:04.144" endtime="20200910 02:25:08.654"></status>
+</kw>
+<kw name="User Register" library="PixeLogicApp">
+<arguments>
+<arg>Mohammed</arg>
+<arg>Said</arg>
+<arg>01178451245</arg>
+<arg>m0said1014@gmail.com</arg>
+<arg>Ms123456</arg>
+<arg>Ms123456</arg>
+</arguments>
+<kw name="Navigate To Website" library="RegistrationPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${WEBSITE_URL}</arg>
+</arguments>
+<msg timestamp="20200910 02:25:08.657" level="INFO">Opening url 'https://www.phptravels.net/register'</msg>
+<status status="PASS" starttime="20200910 02:25:08.656" endtime="20200910 02:25:13.241"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:08.656" endtime="20200910 02:25:13.241"></status>
+</kw>
+<kw name="Verify Register Page Load" library="RegistrationPage">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${REGISTER_PAGE_VERIFY}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:25:13.242" endtime="20200910 02:25:15.093"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${REGISTER_PAGE_VERIFY}</arg>
+</arguments>
+<msg timestamp="20200910 02:25:15.704" level="INFO">Current page contains element 'xpath=//div//h3[contains(text(),"Sign Up")]'.</msg>
+<status status="PASS" starttime="20200910 02:25:15.093" endtime="20200910 02:25:15.704"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:13.241" endtime="20200910 02:25:15.704"></status>
+</kw>
+<kw name="Insert Text First Name" library="RegistrationPage">
+<arguments>
+<arg>${FIRST_NAME}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${FIRST_NAME_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:25:15.705" endtime="20200910 02:25:17.546"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${FIRST_NAME_LOCATOR}</arg>
+<arg>${FIRST_NAME_VALUE}</arg>
+</arguments>
+<msg timestamp="20200910 02:25:17.547" level="INFO">Typing text 'Mohammed' into text field 'xpath=//input[@name="firstname"]'.</msg>
+<status status="PASS" starttime="20200910 02:25:17.546" endtime="20200910 02:25:19.508"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:15.704" endtime="20200910 02:25:19.508"></status>
+</kw>
+<kw name="Insert Text Last Name" library="RegistrationPage">
+<arguments>
+<arg>${LAST_NAME}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${LAST_NAME_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:25:19.509" endtime="20200910 02:25:21.342"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LAST_NAME_LOCATOR}</arg>
+<arg>${LAST_NAME_VALUE}</arg>
+</arguments>
+<msg timestamp="20200910 02:25:21.343" level="INFO">Typing text 'Said' into text field 'xpath=//input[@name="lastname"]'.</msg>
+<status status="PASS" starttime="20200910 02:25:21.342" endtime="20200910 02:25:23.252"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:19.509" endtime="20200910 02:25:23.253"></status>
+</kw>
+<kw name="Insert Text Mobile Number" library="RegistrationPage">
+<arguments>
+<arg>${MOBILE_NUMBER}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${MOBILE_NUMBER_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:25:23.254" endtime="20200910 02:25:25.098"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${MOBILE_NUMBER_LOCATOR}</arg>
+<arg>${MOBILE_NUMBER_VALUE}</arg>
+</arguments>
+<msg timestamp="20200910 02:25:25.099" level="INFO">Typing text '01178451245' into text field 'xpath=//input[@name="phone"]'.</msg>
+<status status="PASS" starttime="20200910 02:25:25.098" endtime="20200910 02:25:27.107"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:23.253" endtime="20200910 02:25:27.108"></status>
+</kw>
+<kw name="Insert Text Email" library="RegistrationPage">
+<arguments>
+<arg>${EMAIL}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${EMAIL_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:25:27.109" endtime="20200910 02:25:28.968"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${EMAIL_LOCATOR}</arg>
+<arg>${EMAIL_VALUE}</arg>
+</arguments>
+<msg timestamp="20200910 02:25:28.968" level="INFO">Typing text 'm0said1014@gmail.com' into text field 'xpath=//input[@name="email"]'.</msg>
+<status status="PASS" starttime="20200910 02:25:28.968" endtime="20200910 02:25:31.051"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:27.108" endtime="20200910 02:25:31.052"></status>
+</kw>
+<kw name="Insert Text Passwoed" library="RegistrationPage">
+<arguments>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${PASSWORD_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:25:31.054" endtime="20200910 02:25:32.929"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PASSWORD_LOCATOR}</arg>
+<arg>${PASSWORD_VALUE}</arg>
+</arguments>
+<msg timestamp="20200910 02:25:32.930" level="INFO">Typing text 'Ms123456' into text field 'xpath=//input[@name="password"]'.</msg>
+<status status="PASS" starttime="20200910 02:25:32.929" endtime="20200910 02:25:34.919"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:31.052" endtime="20200910 02:25:34.919"></status>
+</kw>
+<kw name="Insert Text Confirm Passwoed" library="RegistrationPage">
+<arguments>
+<arg>${CONFIRM_PASSWORD}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${CONFIRM_PASSWORD_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:25:34.920" endtime="20200910 02:25:36.780"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CONFIRM_PASSWORD_LOCATOR}</arg>
+<arg>${CONFIRM_PASSWORD_VALUE}</arg>
+</arguments>
+<msg timestamp="20200910 02:25:36.781" level="INFO">Typing text 'Ms123456' into text field 'xpath=//input[@name="confirmpassword"]'.</msg>
+<status status="PASS" starttime="20200910 02:25:36.780" endtime="20200910 02:25:38.709"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>selenium-screenshot-{index}.png</arg>
+</arguments>
+<msg timestamp="20200910 02:25:39.708" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200910 02:25:38.710" endtime="20200910 02:25:39.708"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:34.919" endtime="20200910 02:25:39.709"></status>
+</kw>
+<kw name="Click SignUp Button" library="RegistrationPage">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${SIGNUP_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:25:39.712" endtime="20200910 02:25:41.586"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGNUP_LOCATOR}</arg>
+</arguments>
+<msg timestamp="20200910 02:25:41.588" level="INFO">Clicking button 'xpath=//button[contains(text()," Sign Up")]'.</msg>
+<status status="PASS" starttime="20200910 02:25:41.587" endtime="20200910 02:25:44.756"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:39.710" endtime="20200910 02:25:44.757"></status>
+</kw>
+<kw name="Verify User Logged In" library="RegistrationPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${success_login_msg}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:25:44.759" endtime="20200910 02:25:47.107"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:44.758" endtime="20200910 02:25:47.108"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:08.655" endtime="20200910 02:25:47.108"></status>
+</kw>
+<kw name="End Web Test" library="CommonWeb" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200910 02:25:47.110" endtime="20200910 02:25:49.801"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:47.109" endtime="20200910 02:25:49.802"></status>
+</kw>
+<tags>
+<tag>Smoke-Test, Register-Functionality, Positive</tag>
+</tags>
+<status status="PASS" starttime="20200910 02:25:04.143" endtime="20200910 02:25:49.803" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Test Case Register with Invalid Credentials">
+<kw name="Begin Web Test" library="CommonWeb" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200910 02:25:49.813" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200910 02:25:49.812" endtime="20200910 02:25:52.611"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.6s</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:25:52.611" endtime="20200910 02:25:52.612"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${TIMEOUT}</arg>
+<arg>60s</arg>
+</arguments>
+<msg timestamp="20200910 02:25:52.614" level="INFO">${TIMEOUT} = 60s</msg>
+<status status="PASS" starttime="20200910 02:25:52.612" endtime="20200910 02:25:52.614"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200910 02:25:52.614" endtime="20200910 02:25:54.342"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:49.811" endtime="20200910 02:25:54.343"></status>
+</kw>
+<kw name="User Register Failed" library="PixeLogicApp">
+<arguments>
+<arg>mo</arg>
+<arg>mo</arg>
+<arg>011</arg>
+<arg>mosaid@gmail.com</arg>
+<arg>m1234</arg>
+<arg>m12342</arg>
+</arguments>
+<kw name="Navigate To Website" library="RegistrationPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${WEBSITE_URL}</arg>
+</arguments>
+<msg timestamp="20200910 02:25:54.348" level="INFO">Opening url 'https://www.phptravels.net/register'</msg>
+<status status="PASS" starttime="20200910 02:25:54.347" endtime="20200910 02:26:35.008"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:25:54.346" endtime="20200910 02:26:35.008"></status>
+</kw>
+<kw name="Verify Register Page Load" library="RegistrationPage">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${REGISTER_PAGE_VERIFY}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:26:35.009" endtime="20200910 02:26:36.852"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${REGISTER_PAGE_VERIFY}</arg>
+</arguments>
+<msg timestamp="20200910 02:26:37.464" level="INFO">Current page contains element 'xpath=//div//h3[contains(text(),"Sign Up")]'.</msg>
+<status status="PASS" starttime="20200910 02:26:36.852" endtime="20200910 02:26:37.464"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:26:35.008" endtime="20200910 02:26:37.464"></status>
+</kw>
+<kw name="Insert Text First Name" library="RegistrationPage">
+<arguments>
+<arg>${FIRST_NAME}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${FIRST_NAME_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:26:37.465" endtime="20200910 02:26:39.326"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${FIRST_NAME_LOCATOR}</arg>
+<arg>${FIRST_NAME_VALUE}</arg>
+</arguments>
+<msg timestamp="20200910 02:26:39.327" level="INFO">Typing text 'mo' into text field 'xpath=//input[@name="firstname"]'.</msg>
+<status status="PASS" starttime="20200910 02:26:39.326" endtime="20200910 02:26:41.273"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:26:37.464" endtime="20200910 02:26:41.273"></status>
+</kw>
+<kw name="Insert Text Last Name" library="RegistrationPage">
+<arguments>
+<arg>${LAST_NAME}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${LAST_NAME_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:26:41.274" endtime="20200910 02:26:43.122"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LAST_NAME_LOCATOR}</arg>
+<arg>${LAST_NAME_VALUE}</arg>
+</arguments>
+<msg timestamp="20200910 02:26:43.123" level="INFO">Typing text 'mo' into text field 'xpath=//input[@name="lastname"]'.</msg>
+<status status="PASS" starttime="20200910 02:26:43.123" endtime="20200910 02:26:45.063"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:26:41.273" endtime="20200910 02:26:45.063"></status>
+</kw>
+<kw name="Insert Text Mobile Number" library="RegistrationPage">
+<arguments>
+<arg>${MOBILE_NUMBER}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${MOBILE_NUMBER_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:26:45.064" endtime="20200910 02:26:46.931"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${MOBILE_NUMBER_LOCATOR}</arg>
+<arg>${MOBILE_NUMBER_VALUE}</arg>
+</arguments>
+<msg timestamp="20200910 02:26:46.932" level="INFO">Typing text '011' into text field 'xpath=//input[@name="phone"]'.</msg>
+<status status="PASS" starttime="20200910 02:26:46.932" endtime="20200910 02:26:48.872"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:26:45.063" endtime="20200910 02:26:48.872"></status>
+</kw>
+<kw name="Insert Text Email" library="RegistrationPage">
+<arguments>
+<arg>${EMAIL}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${EMAIL_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:26:48.873" endtime="20200910 02:26:50.746"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${EMAIL_LOCATOR}</arg>
+<arg>${EMAIL_VALUE}</arg>
+</arguments>
+<msg timestamp="20200910 02:26:50.748" level="INFO">Typing text 'mosaid@gmail.com' into text field 'xpath=//input[@name="email"]'.</msg>
+<status status="PASS" starttime="20200910 02:26:50.747" endtime="20200910 02:26:52.739"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:26:48.873" endtime="20200910 02:26:52.740"></status>
+</kw>
+<kw name="Insert Text Passwoed" library="RegistrationPage">
+<arguments>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${PASSWORD_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:26:52.742" endtime="20200910 02:26:54.601"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PASSWORD_LOCATOR}</arg>
+<arg>${PASSWORD_VALUE}</arg>
+</arguments>
+<msg timestamp="20200910 02:26:54.603" level="INFO">Typing text 'm1234' into text field 'xpath=//input[@name="password"]'.</msg>
+<status status="PASS" starttime="20200910 02:26:54.602" endtime="20200910 02:26:56.576"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:26:52.740" endtime="20200910 02:26:56.577"></status>
+</kw>
+<kw name="Insert Text Confirm Passwoed" library="RegistrationPage">
+<arguments>
+<arg>${CONFIRM_PASSWORD}</arg>
+</arguments>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${CONFIRM_PASSWORD_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:26:56.579" endtime="20200910 02:26:58.448"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CONFIRM_PASSWORD_LOCATOR}</arg>
+<arg>${CONFIRM_PASSWORD_VALUE}</arg>
+</arguments>
+<msg timestamp="20200910 02:26:58.449" level="INFO">Typing text 'm12342' into text field 'xpath=//input[@name="confirmpassword"]'.</msg>
+<status status="PASS" starttime="20200910 02:26:58.448" endtime="20200910 02:27:00.397"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>selenium-screenshot-{index}.png</arg>
+</arguments>
+<msg timestamp="20200910 02:27:01.377" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200910 02:27:00.397" endtime="20200910 02:27:01.378"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:26:56.578" endtime="20200910 02:27:01.378"></status>
+</kw>
+<kw name="Click SignUp Button" library="RegistrationPage">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${SIGNUP_LOCATOR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 02:27:01.379" endtime="20200910 02:27:03.228"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGNUP_LOCATOR}</arg>
+</arguments>
+<msg timestamp="20200910 02:27:03.228" level="INFO">Clicking button 'xpath=//button[contains(text()," Sign Up")]'.</msg>
+<status status="PASS" starttime="20200910 02:27:03.228" endtime="20200910 02:27:06.356"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:27:01.378" endtime="20200910 02:27:06.357"></status>
+</kw>
+<kw name="Verify User Failed login" library="RegistrationPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${Success_login_msg}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200910 02:28:07.679" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200910 02:28:06.681" endtime="20200910 02:28:07.679"></status>
+</kw>
+<msg timestamp="20200910 02:28:07.681" level="FAIL">Element 'xpath=//*[contains(text(),'Hi,')]' did not appear in 1 minute.</msg>
+<status status="FAIL" starttime="20200910 02:27:06.359" endtime="20200910 02:28:07.681"></status>
+</kw>
+<status status="FAIL" starttime="20200910 02:27:06.357" endtime="20200910 02:28:07.682"></status>
+</kw>
+<status status="FAIL" starttime="20200910 02:25:54.344" endtime="20200910 02:28:07.682"></status>
+</kw>
+<kw name="End Web Test" library="CommonWeb" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200910 02:28:07.683" endtime="20200910 02:28:10.358"></status>
+</kw>
+<status status="PASS" starttime="20200910 02:28:07.683" endtime="20200910 02:28:10.358"></status>
+</kw>
+<tags>
+<tag>Smoke-Test, Register-Functionality, Negative</tag>
+</tags>
+<status status="FAIL" starttime="20200910 02:25:49.809" endtime="20200910 02:28:10.359" critical="yes">Element 'xpath=//*[contains(text(),'Hi,')]' did not appear in 1 minute.</status>
+</test>
+<doc>PixeLogic Task</doc>
+<status status="FAIL" starttime="20200910 02:24:55.779" endtime="20200910 02:28:10.365"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1">Critical Tests</stat>
+<stat pass="2" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">HTTP Request</stat>
+<stat pass="0" fail="1">Smoke-Test, Register-Functionality, Negative</stat>
+<stat pass="1" fail="0">Smoke-Test, Register-Functionality, Positive</stat>
+</tag>
+<suite>
+<stat pass="2" fail="1" id="s1" name="PixeLogic">PixeLogic</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
