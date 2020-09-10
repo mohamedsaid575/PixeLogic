@@ -1,7 +1,7 @@
 1. Download Python
 2. Download Pycharm
 3. Create new Project and select Python interpreter on your machine (not new Venv)
-4. Install the following Libraries:
+Install the following Libraries:
   1. Selenium
   2. Robotframework-SeleniumLibrary
   3. RequestsLibrary
